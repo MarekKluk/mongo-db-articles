@@ -43,4 +43,8 @@ export class UsersService {
     }
     return deletedUser;
   }
+
+  async findByLocation(location: string) {
+    return this.userModel.find({ location }).explain('executionStats');
+  }
 }
